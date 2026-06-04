@@ -6,21 +6,24 @@
 */
 // variable needed
 let countdown: number = 22
+
 // setting up
+pins.digitalWritePin(DigitalPin.P14, 0)
+pins.digitalWritePin(DigitalPin.P15, 0)
+pins.digitalWritePin(DigitalPin.P16, 0)
 basic.clearScreen()
 basic.showIcon(IconNames.Happy)
 
-// shows all colors on A button
+// runs stoplight program
 input.onButtonPressed(Button.A, function () {
     // turns on green pin
     pins.digitalWritePin(DigitalPin.P14, 1)
     basic.showIcon(IconNames.StickFigure)
     basic.pause(2000)
     basic.clearScreen()
-    while (countdown <= 22) {
+    while (countdown >= 0) {
         basic.showNumber(countdown)
         countdown--
-        basic.pause(100)
     }
     pins.digitalWritePin(DigitalPin.P14, 0)
     pins.digitalWritePin(DigitalPin.P15, 1)
