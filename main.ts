@@ -20,12 +20,19 @@ input.onButtonPressed(Button.A, function () {
 
     // turns on green LED
     pins.digitalWritePin(DigitalPin.P14, 1)
+    
+    // microbit displays
     basic.showIcon(IconNames.StickFigure)
     basic.pause(2000)
     basic.clearScreen()
+    while (countdown >= 10) {
+        basic.showNumber(countdown)
+        countdown--
+    }
     while (countdown >= 0) {
         basic.showNumber(countdown)
         countdown--
+        basic.pause(800)
     }
     pins.digitalWritePin(DigitalPin.P14, 0)
 
