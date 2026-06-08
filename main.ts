@@ -1,4 +1,4 @@
-3/* Copyright (c) 2020 MTHS All rights reserved
+/* Copyright (c) 2020 MTHS All rights reserved
  *
  * Created by: Noah and Aden
  * Created on: June 2026
@@ -17,11 +17,6 @@ pins.digitalWritePin(DigitalPin.P15, 0)
 pins.digitalWritePin(DigitalPin.P16, 0)
 basic.clearScreen()
 basic.showIcon(IconNames.Happy)
-
-// sending the message
-input.onButtonPressed(Button.A, function () {
-    radio.sendString("START")
-})
 
 // runs stoplight program if message is transmitted
 radio.onReceivedString( function (receivedString) {
